@@ -1,0 +1,184 @@
+/* Set background styles */
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #dcc8c8;
+    overflow: hidden;
+    /* Prevent child elements from overflowing */
+}
+
+/* Style for background image */
+.background_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    /* Example: Reduce opacity for a background effect */
+}
+
+/* Style for the logo */
+.logo {
+    color: #ff1888;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 30px;
+}
+
+/* Navbar container styles */
+.navbar {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    /* Ensure navbar is above the background image */
+}
+
+/* Style for navigation items */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    /* Ensure flex display and wrap items */
+}
+
+ul Link,
+a {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Navbar right-aligned content styles */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Style for search and basket icons */
+.navbar-search-icon,
+.navbar-basket-icon {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Style for the red dot */
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-left: 8px;
+}
+
+/* Style for the sign-in button */
+button {
+    padding: 10px 30px;
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid #e13da8;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #f462c1;
+    color: aliceblue;
+}
+
+.navbar .active {
+    padding-bottom: 1px;
+    border-bottom: 4px solid #f13392;
+}
+
+/* Media queries */
+@media (max-width: 1050px) {
+    .navbar .logo {
+        width: 140px;
+    }
+
+    .navbar-menu {
+        gap: 20px;
+        font-size: 17px;
+    }
+
+    .navbar-right {
+        gap: 30px;
+    }
+
+    .navbar-right img {
+        width: 22px;
+    }
+
+    .navbar-right button {
+        padding: 8px 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar .logo {
+        width: 120px;
+    }
+
+    .navbar-menu {
+        gap: 20px;
+        font-size: 16px;
+    }
+
+    .navbar-right {
+        gap: 20px;
+    }
+
+    .navbar-right img {
+        width: 20px;
+    }
+
+    .navbar-right button {
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .navbar-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
+
+    ul Link,
+    a {
+        margin-right: 10px;
+        /* Adjusted margin to separate links properly */
+    }
+
+    /* Ensure background image covers properly on smaller screens */
+    .background_img {
+        height: 100%;
+        width: 190%;
+        object-fit: fill;
+    }
+}
